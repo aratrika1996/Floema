@@ -8,6 +8,7 @@ const IS_DEVELOPMENT = process.env.NODE_ENV === 'dev'
 
 const dirApp = path.join(__dirname, 'app')
 const dirAssets = path.join(__dirname, 'assets')
+const dirShared = path.join(__dirname, 'shared')
 const dirStyles = path.join(__dirname, 'styles')
 const dirNode = path.join(__dirname, 'node_modules')
 
@@ -22,6 +23,7 @@ module.exports = {
             dirApp,
             dirAssets,
             dirNode,
+            dirShared,
             dirStyles
         ],
         extensions: ['', '.ts', '.tsx', '.js']
@@ -36,7 +38,8 @@ module.exports = {
             patterns: [
                 {
                     from: './shared',
-                    to: ""
+                    to: "",
+                    noErrorOnMissing: true
                 }
             ]
         }),
